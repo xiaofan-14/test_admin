@@ -17,7 +17,7 @@ defineProps({
 
 <template>
   <main class="cus-scroll h-full flex-col flex-1 bg-[#f5f6fb] dark:bg-[#121212]">
-    <main :class="{ 'flex-1': full }" class="m-12">
+    <main :class="{ 'flex-1': full }" class="m-4">
       <slot />
     </main>
     <slot name="footer">

@@ -1,5 +1,5 @@
 <template>
-  <footer class="f-c-c text-14 text-gray-500">
+  <footer class="flex justify-center items-center text-14 text-gray-500">
     <p>
       Copyright © 2025
       <a
