@@ -11,7 +11,9 @@ import SideBar from './sidebar/index.vue'
 
     <article class="flex flex-col flex-1">
       <AppHeader class="h-14 shrink-0" />
-      <slot />
+      <div class="p-4">
+        <slot />
+      </div>
     </article>
   </div>
 </template>

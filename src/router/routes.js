@@ -37,4 +37,12 @@ export const basicRoutes = [
       layout: 'empty',
     },
   },
+  {
+    name: 'Users',
+    path: '/system/users',
+    component: () => import('@/views/system/users.vue'),
+    meta: {
+      title: '用户管理',
+    },
+  }
 ]
