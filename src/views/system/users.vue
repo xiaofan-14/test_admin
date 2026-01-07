@@ -2,6 +2,7 @@
 import axios from 'axios';
 import { onMounted, ref, reactive } from 'vue';
 import AppCard from '../../components/common/AppCard.vue';
+import { getUserList } from '../../api/api.js';
 
 // --- 数据状态 ---
 const userList = ref([]);
@@ -30,10 +31,11 @@ const fetchList = async () => {
     loading.value = true;
     try {
         // 注意：此处根据实际接口调整参数传递方式
-        const res = await axios.get("http://localhost:3000/users/list", { params: queryParams });
+        const res = await getUserList(queryParams);
+        
         // 假设接口返回结构为 { data: { list: [], total: 0 } }
-        userList.value = res.data.data.list || res.data.data; 
-        total.value = res.data.data.total || userList.value.length;
+        userList.value = res.data 
+        total.value = res.data.length;
     } catch (error) {
         alert("获取列表失败");
     } finally {
@@ -77,7 +79,7 @@ onMounted(fetchList);
 </script>
 
 <template>
-    <AppCard bordered>
+    <AppCard bordered class="cus-scroll m-4 h-0 flex-1 rounded-8 p-4">
         <h2>用户管理</h2>
 
         <div class="search-bar">
